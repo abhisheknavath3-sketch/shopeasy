@@ -1,6 +1,6 @@
 import express from "express";
-import { verifyToken } from "../middleware/auth.js";
-import { isAdmin } from "../middleware/auth.js";
+import { verifyToken } from "../../Backend/middleware/auth.js";
+import { isAdmin } from "../../Backend/middleware/admin.js";
 import User from "../../Backend/models/User.js";
 import Product from "../../Backend/models/product.js";
 import Order from "../../Backend/models/order.js";
