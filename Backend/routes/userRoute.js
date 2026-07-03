@@ -2,7 +2,7 @@ import express from "express";
 import {
   registerUser,
   loginUser,
-} from "../controllers/userController.js";
+} from "../../Backend/controllers/userController.js";
 
 import User from "../models/User.js";
 

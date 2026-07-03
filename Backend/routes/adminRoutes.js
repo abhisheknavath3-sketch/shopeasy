@@ -1,9 +1,9 @@
 import express from "express";
 import { verifyToken } from "../middleware/auth.js";
-import { isAdmin } from "../middleware/admin.js";
-import User from "../models/User.js";
-import Product from "../models/Product.js";
-import Order from "../models/Order.js";
+import { isAdmin } from "../middleware/auth.js";
+import User from "../../Backend/models/User.js";
+import Product from "../../Backend/models/Product.js";
+import Order from "../../Backend/models/Order.js";
 
 const router = express.Router();
 

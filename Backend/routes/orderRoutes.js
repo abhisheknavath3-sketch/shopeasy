@@ -4,11 +4,11 @@ import {
   createOrder,
   getOrders,
   getMyOrders,
-} from "../controllers/orderController.js";
+} from "../../Backend/controllers/orderController.js";
 const router = express.Router();
 
-router.post("/", verifyToken, createOrder);
-router.get("/", getOrders);
+router.post("/createOrder", verifyToken, createOrder);
+router.get("/getOrders", getOrders);
 router.get("/my-orders", verifyToken, getMyOrders);
 
 export default router;
