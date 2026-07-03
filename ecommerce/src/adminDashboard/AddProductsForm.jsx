@@ -23,7 +23,7 @@
 //     data.append("image", file);
 
 //     const response = await fetch(
-//       "http://localhost:5000/api/upload",
+//       " https://shopeasy-kghk.onrender.com/api/upload",
 //       {
 //         method: "POST",
 //         body: data,
@@ -184,7 +184,7 @@
 //   data.append("image", file);
 
 //   const response = await fetch(
-//     "http://localhost:5000/api/upload",
+//     " https://shopeasy-kghk.onrender.com/api/upload",
 //     {
 //       method: "POST",
 //       body: data,
@@ -369,7 +369,7 @@ const AddProductsForm = ({
       data.append("image", file);
 
       const response = await fetch(
-        "http://localhost:5000/api/upload",
+        " https://shopeasy-kghk.onrender.com/api/upload",
         {
           method: "POST",
           body: data,

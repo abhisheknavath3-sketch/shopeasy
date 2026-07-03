@@ -39,7 +39,7 @@
 
 //     try {
 //       const response = await fetch(
-//         "http://localhost:5000/api/users/register",
+//         " https://shopeasy-kghk.onrender.com/api/users/register",
 //         {
 //           method: "POST",
 //           headers: {
@@ -207,7 +207,7 @@ const handleSubmit = async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost:5000/api/users/register",
+      " https://shopeasy-kghk.onrender.com/api/users/register",
       {
         method: "POST",
         headers: {

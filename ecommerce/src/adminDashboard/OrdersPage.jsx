@@ -8,7 +8,7 @@
 
 //     try {
 //       const response = await fetch(
-//         `http://localhost:5000/api/admin/orders/${id}`,
+//         ` https://shopeasy-kghk.onrender.com/api/admin/orders/${id}`,
 //         {
 //           method: "PUT",
 //           headers: {
@@ -36,7 +36,7 @@
 //   useEffect(() => {
 //     const token = localStorage.getItem("token");
 
-//     fetch("http://localhost:5000/api/admin/orders", {
+//     fetch(" https://shopeasy-kghk.onrender.com/api/admin/orders", {
 //       headers: {
 //         Authorization: `Bearer ${token}`,
 //       },
@@ -151,7 +151,7 @@ const OrdersPage = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/orders/${id}`,
+        ` https://shopeasy-kghk.onrender.com/api/admin/orders/${id}`,
         {
           method: "PUT",
           headers: {
@@ -179,7 +179,7 @@ const OrdersPage = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/admin/orders", {
+    fetch(" https://shopeasy-kghk.onrender.com/api/admin/orders", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

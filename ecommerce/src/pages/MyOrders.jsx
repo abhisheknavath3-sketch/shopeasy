@@ -8,7 +8,7 @@ const [orders, setOrders] = useState([]);
 useEffect(() => {
 const token = localStorage.getItem("token");
 
-fetch("http://localhost:5000/api/orders/my-orders", {
+fetch(" https://shopeasy-kghk.onrender.com/api/orders/my-orders", {
   headers: {
     Authorization: `Bearer ${token}`,
   },

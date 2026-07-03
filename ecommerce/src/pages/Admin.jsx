@@ -34,11 +34,11 @@ const Admin = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/products")
+    fetch(" https://shopeasy-kghk.onrender.com/api/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
 
-    fetch("http://localhost:5000/api/admin/stats", {
+    fetch(" https://shopeasy-kghk.onrender.com/api/admin/stats", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -46,7 +46,7 @@ const Admin = () => {
       .then((res) => res.json())
       .then((data) => setStats(data));
 
-    fetch("http://localhost:5000/api/admin/users", {
+    fetch(" https://shopeasy-kghk.onrender.com/api/admin/users", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -57,7 +57,7 @@ const Admin = () => {
 
   const handleDelete = async (id) => {
     await fetch(
-      `http://localhost:5000/api/products/${id}`,
+      ` https://shopeasy-kghk.onrender.com/api/products/${id}`,
       {
         method: "DELETE",
       }
@@ -76,7 +76,7 @@ const Admin = () => {
         localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/user/${id}`,
+        ` https://shopeasy-kghk.onrender.com/api/admin/user/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -114,7 +114,7 @@ const Admin = () => {
 
       if (editingProduct) {
         response = await fetch(
-          `http://localhost:5000/api/products/${editingProduct._id}`,
+          ` https://shopeasy-kghk.onrender.com/api/products/${editingProduct._id}`,
           {
             method: "PUT",
             headers: {
@@ -141,7 +141,7 @@ const Admin = () => {
 
       else {
         response = await fetch(
-          "http://localhost:5000/api/products",
+          " https://shopeasy-kghk.onrender.com/api/products",
           {
             method: "POST",
             headers: {

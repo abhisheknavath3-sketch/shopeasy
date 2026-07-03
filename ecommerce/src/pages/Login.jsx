@@ -25,7 +25,7 @@
 
 //     try {
 //       const response = await fetch(
-//         "http://localhost:5000/api/users/login",
+//         " https://shopeasy-kghk.onrender.com/api/users/login",
 //         {
 //           method: "POST",
 //           headers: {
@@ -171,7 +171,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/users/login",
+        " https://shopeasy-kghk.onrender.com/api/users/login",
         {
           method: "POST",
           headers: {
