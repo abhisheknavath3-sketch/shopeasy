@@ -34,11 +34,11 @@ const Admin = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch(" https://shopeasy-kghk.onrender.com/api/products")
+    fetch("https://shopeasy-kghk.onrender.com/api/products/getProducts")
       .then((res) => res.json())
       .then((data) => setProducts(data));
 
-    fetch(" https://shopeasy-kghk.onrender.com/api/admin/stats", {
+    fetch("https://shopeasy-kghk.onrender.com/api/admin/stats", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -46,7 +46,7 @@ const Admin = () => {
       .then((res) => res.json())
       .then((data) => setStats(data));
 
-    fetch(" https://shopeasy-kghk.onrender.com/api/admin/users", {
+    fetch("https://shopeasy-kghk.onrender.com/api/admin/users", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -57,7 +57,7 @@ const Admin = () => {
 
   const handleDelete = async (id) => {
     await fetch(
-      ` https://shopeasy-kghk.onrender.com/api/products/${id}`,
+      `https://shopeasy-kghk.onrender.com/api/products/deleteProduct/${id}`,
       {
         method: "DELETE",
       }
@@ -71,12 +71,13 @@ const Admin = () => {
   };
 
   const handleDeleteUser = async (id) => {
+     console.log(id);
     try {
       const token =
         localStorage.getItem("token");
 
       const response = await fetch(
-        ` https://shopeasy-kghk.onrender.com/api/admin/user/${id}`,
+        `https://shopeasy-kghk.onrender.com/api/products/deleteProduct/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -114,7 +115,7 @@ const Admin = () => {
 
       if (editingProduct) {
         response = await fetch(
-          ` https://shopeasy-kghk.onrender.com/api/products/${editingProduct._id}`,
+          `https://shopeasy-kghk.onrender.com/api/products/updateProduct/${editingProduct._id}`,
           {
             method: "PUT",
             headers: {
@@ -141,7 +142,7 @@ const Admin = () => {
 
       else {
         response = await fetch(
-          " https://shopeasy-kghk.onrender.com/api/products",
+          "https://shopeasy-kghk.onrender.com/api/products/addProduct",
           {
             method: "POST",
             headers: {
@@ -150,6 +151,7 @@ const Admin = () => {
             body: JSON.stringify(formData),
           }
         );
+        console.log(response.status)
 
         const newProduct = await response.json();
 

@@ -178,7 +178,7 @@ import {
 
 
 const Register = () => {
-  
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -195,57 +195,57 @@ const Register = () => {
     });
   };
 
-  
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
 
-  if (formData.password !== formData.confirmPassword) {
-    alert("Passwords do not match");
-    return;
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    const response = await fetch(
-      " https://shopeasy-kghk.onrender.com/api/users/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: formData.username,
-          email: formData.email,
-          password: formData.password,
-        }),
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      alert(data.message);
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match");
       return;
     }
 
-    alert("Registration Successful ✅");
+    try {
+      const response = await fetch(
+        " https://shopeasy-kghk.onrender.com/api/users/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: formData.username,
+            email: formData.email,
+            password: formData.password,
+          }),
+        }
+      );
 
-    // Clear Form
-    setFormData({
-      username: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
+      const data = await response.json();
 
-    // Redirect to Login
-    navigate("/login");
+      if (!response.ok) {
+        alert(data.message);
+        return;
+      }
 
-  } catch (error) {
-    console.log(error);
-    alert("Something went wrong!");
-  }
-};
+      alert("Registration Successful ✅");
+
+      // Clear Form
+      setFormData({
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+
+      // Redirect to Login
+      navigate("/login");
+
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong!");
+    }
+  };
 
   return (
     <>
@@ -255,7 +255,7 @@ const handleSubmit = async (e) => {
 
         <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2">
 
-          
+
           <div className="hidden md:flex flex-col justify-center bg-linear-to-br from-purple-700 to-pink-600 text-white p-10">
 
             <FaShoppingBag size={60} />
@@ -285,7 +285,7 @@ const handleSubmit = async (e) => {
 
           </div>
 
-          
+
           <div className="p-8 md:p-12">
 
             <h2 className="text-3xl font-bold text-center text-gray-800">
@@ -316,7 +316,7 @@ const handleSubmit = async (e) => {
                 />
               </div>
 
-             
+
               <div className="relative">
                 <FaEnvelope className="absolute left-4 top-4 text-gray-400" />
 
@@ -331,7 +331,7 @@ const handleSubmit = async (e) => {
                 />
               </div>
 
-              
+
               <div className="relative">
                 <FaLock className="absolute left-4 top-4 text-gray-400" />
 
@@ -346,7 +346,7 @@ const handleSubmit = async (e) => {
                 />
               </div>
 
-              
+
               <div className="relative">
                 <FaLock className="absolute left-4 top-4 text-gray-400" />
 
@@ -384,7 +384,7 @@ const handleSubmit = async (e) => {
         </div>
       </div>
 
-      
+
     </>
   );
 };

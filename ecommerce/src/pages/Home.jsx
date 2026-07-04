@@ -26,11 +26,11 @@ const Home = () => {
     });
 
     useEffect(() => {
-        fetch(" https://shopeasy-kghk.onrender.com/api/products")
+        fetch("https://shopeasy-kghk.onrender.com/api/products/getProducts")
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, []);
-
+    
     return (
         <>
             <div className="min-h-screen bg-gray-50">

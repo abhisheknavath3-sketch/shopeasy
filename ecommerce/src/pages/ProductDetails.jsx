@@ -10,7 +10,7 @@ const ProductDetails = () => {
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
-        fetch(" https://shopeasy-kghk.onrender.com/api/products")
+        fetch(" https://shopeasy-kghk.onrender.com/api/products/getProducts")
             .then((res) => res.json())
             .then((data) => {
                 const foundProduct = data.find(
