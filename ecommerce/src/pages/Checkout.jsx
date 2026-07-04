@@ -25,7 +25,7 @@ const Checkout = () => {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                " https://shopeasy-kghk.onrender.com/api/orders",
+                " https://shopeasy-kghk.onrender.com/api/orders/createOrder",
                 {
                     method: "POST",
                     headers: {
